@@ -1,0 +1,12 @@
+{
+  // Cloudflare Workers static assets: no script, the Worker only serves dist/.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "landesz-dev",
+  "compatibility_date": "2026-10-30",
+  "workers_dev": true,
+  "assets": {
+    "directory": "./dist",
+    // clean URLs: /bio serves bio.html, /bio.html redirects to /bio
+    "html_handling": "auto-trailing-slash"
+  }
+}
