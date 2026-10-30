@@ -8,5 +8,11 @@
     "directory": "./dist",
     // clean URLs: /bio serves bio.html, /bio.html redirects to /bio
     "html_handling": "auto-trailing-slash"
-  }
+  },
+  // Zone routes, not custom domains: the zone keeps its existing proxied A record
+  // and the Worker answers at the edge before any origin is contacted.
+  "routes": [
+    { "pattern": "landesz.dev/*", "zone_name": "landesz.dev" },
+    { "pattern": "www.landesz.dev/*", "zone_name": "landesz.dev" }
+  ]
 }

@@ -2,7 +2,12 @@
 
 Personal site. Vite + three.js + GSAP ScrollTrigger + Lenis + vgpu. One page, no framework.
 
-Live: Vercel team `tomlol`, project `landesz-dev` (`vercel deploy --prod --scope tomlol`).
+Live on Cloudflare Workers (static assets): `npm run build && npx wrangler deploy`,
+Worker `landesz-dev`, https://landesz-dev.tmslandesz.workers.dev, served at
+https://landesz.dev and www through zone routes in `wrangler.jsonc` (routes, not
+custom domains, because the zone keeps its own proxied A record). Source: github.com/xa1w/landesz-dev; connect
+it under Workers & Pages → landesz-dev → Settings → Build for deploy-on-push. (An
+earlier Vercel deploy on team `tomlol` also exists and can be deleted.)
 `index.html` is a single contact screen (2026-10-30). The interactive pieces below
 are still in `src/` and can be wired back into the page; the earlier structure was
 hero with the chrome form, four full-screen pieces, then contact.
