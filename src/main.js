@@ -6,6 +6,14 @@ const tick = () => document.querySelectorAll('[data-time]').forEach((el) => (el.
 tick();
 setInterval(tick, 15000);
 
+/* secret: a tiny "click me" in the footer toggles the clip */
+const pop = document.querySelector('[data-egg-pop]');
+document.querySelector('[data-egg]').addEventListener('click', () => {
+  pop.hidden = !pop.hidden;
+  const v = pop.querySelector('video');
+  pop.hidden ? v.pause() : v.play().catch(() => {});
+});
+
 /* entrance: JS owns the hidden state, so the page reads fine if this never runs */
 if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   gsap.timeline({ defaults: { ease: 'power3.out', duration: 1 } })

@@ -92,6 +92,22 @@ h1, p { margin: 0; }
   padding: 18px var(--gutter) 24px;
 }
 
+/* secret */
+.egg {
+  position: absolute; left: 50%; transform: translateX(-50%);
+  font: inherit; font-size: 10px; color: var(--line);
+  background: none; border: 0; padding: 4px; cursor: pointer;
+  transition: color .3s;
+}
+.egg:hover { color: var(--muted); }
+.foot { position: relative; }
+.egg__pop {
+  position: fixed; right: 20px; bottom: 64px; z-index: 20;
+  width: min(240px, 60vw); border-radius: 14px; overflow: hidden;
+  border: 1px solid var(--line-soft); background: #000;
+}
+.egg__pop video { display: block; width: 100%; }
+
 @media (max-width: 767px) {
   .page { padding-top: 32px; }
   .name { font-size: 19vw; margin-top: 48px; }
